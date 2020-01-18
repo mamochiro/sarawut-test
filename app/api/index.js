@@ -1,6 +1,5 @@
 import http from 'http'
 import { ApolloServer } from 'apollo-server-express'
-// import { AuthenticationError } from 'apollo-server'
 import express from 'express'
 import bodyParser from 'body-parser'
 import compression from 'compression'
@@ -9,13 +8,10 @@ import cors from 'cors'
 import helmet from 'helmet'
 import depthLimit from 'graphql-depth-limit'
 import { createComplexityLimitRule } from 'graphql-validation-complexity'
-// import { graphqlUploadExpress } from 'graphql-upload'
 import { getClientIp } from 'api/utils/request'
-// import { getJWT } from 'api/utils/jwt'
 import { resolvers, typeDefs } from 'api/graphql/schema'
 import schemaDirectives from 'api/utils/directives'
 import { formatError } from 'api/utils/errors'
-// import createLoaders from 'api/graphql/loaders'
 import i18n, { e } from 'api/utils/localize'
 
 const LIMIT_QUERY_DEPT = 10
@@ -70,7 +66,6 @@ const server = new ApolloServer({
     }
 
     const authToken = req.user || {}
-    // const loaders = createLoaders(authToken)
 
     if (
       (req.headers['x-locale'] && req.headers['x-locale'] === 'th') ||
@@ -92,23 +87,6 @@ const server = new ApolloServer({
       getAuthToken: () => req.user || {},
     }
   },
-  // subscriptions: {
-  //   onConnect(connectionParams) {
-  //     console.log('onConnect')
-  //     let authToken = {}
-  //     if (connectionParams.authorization != null) {
-  //       authToken = getJWT(connectionParams.authorization.replace('Bearer ', ''))
-  //       return {
-  //         authToken,
-  //       }
-  //     }
-
-  //     throw new AuthenticationError(e('You are not allowed to access this data'))
-  //   },
-  //   onDisconnect() {
-  //     console.log('onDisconnect')
-  //   },
-  // },
 })
 
 server.applyMiddleware({ app })
@@ -131,8 +109,6 @@ app.use((err, _req, res, _next) => {
 })
 
 const httpServer = http.createServer(app)
-
-// server.installSubscriptionHandlers(httpServer)
 
 httpServer.listen(PORT, err => {
   if (err) {
