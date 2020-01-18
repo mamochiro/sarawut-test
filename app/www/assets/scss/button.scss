@@ -1,0 +1,117 @@
+.button-link {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $primaryColor;
+  color: #fff;
+  border-radius: 30px;
+  height: 50px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  font-family: $kanit;
+  font-size: 16px;
+  border: 0;
+  cursor: pointer;
+  &:hover {
+    background-color: lighten($primaryColor, 10%);
+  }
+  &:focus {
+    outline: 0;
+    border: 0;
+  }
+  &:active {
+    border: 0;
+    box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+    background-color: darken($primaryColor, 10%);
+  }
+  &:disabled {
+    box-shadow: none;
+    background-color: lighten($primaryColor, 60%);
+    cursor: auto;
+  }
+  &.block {
+    display: block;
+    width: 100%;
+  }
+  &.block_button {
+    display: block;
+    width: 90%;
+    margin: 30px auto 10px;
+  }
+  &.block_seemore {
+    display: block;
+    width: 30%;
+    margin: 30px auto 10px;
+  }
+  &.facebook {
+    background-color: #3b5998;
+    &:hover {
+      background-color: lighten(#3b5998, 10%);
+    }
+    &:active {
+      box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+      background-color: darken(#3b5998, 10%);
+    }
+    &:disabled {
+      background-color: lighten(#3b5998, 60%);
+      cursor: auto;
+    }
+  }
+  &.google {
+    background-color: #db4a39;
+    &:hover {
+      background-color: lighten(#db4a39, 10%);
+    }
+  }
+  &.oncoming {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #000000;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 0px;
+    height: 40px;
+  }
+  &.seemore {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 0px;
+    height: 40px;
+  }
+  &.buy {
+    &__ticket {
+      background: linear-gradient(90deg, rgba(12, 76, 202, 1) 0%, rgba(11, 63, 164, 1) 100%);
+      box-shadow: 0px 0px 10px #0c4cca;
+      color: #fff;
+      border: 0px;
+    }
+    &__merchandise {
+      background: linear-gradient(90deg, rgba(12, 76, 202, 1) 0%, rgba(11, 63, 164, 1) 100%);
+      box-shadow: 0px 0px 10px #0c4cca;
+      color: #fff;
+      border: 0px;
+    }
+    &__outside {
+      background: #ba0505;
+      box-shadow: 0px 0px 10px #ff0000;
+      color: #fff;
+      border: 0px;
+    }
+    &__hide {
+      background-color: #0000b400;
+      color: #fff;
+      border: 0px;
+      box-shadow: 0px 0px 0px;
+    }
+    &:active {
+      box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.5);
+      background-color: darken(#db4a39, 10%);
+    }
+    &:disabled {
+      background-color: lighten(#db4a39, 60%);
+      cursor: auto;
+    }
+  }
+}

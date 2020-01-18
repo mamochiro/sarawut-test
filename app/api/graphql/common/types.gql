@@ -1,0 +1,12 @@
+scalar Date
+scalar JSON
+scalar LimitQuery
+
+type PageInfo {
+  hasNextPage: Boolean!
+  hasPrevPage: Boolean!
+}
+
+type Result {
+  status: Boolean!
+}

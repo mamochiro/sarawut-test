@@ -1,0 +1,34 @@
+{
+  "name": "gmmlive",
+  "version": "1.0.0",
+  "description": "GMM Live",
+  "main": "index.js",
+  "author": "Workmotion Creative",
+  "license": "UNLICENSED",
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add",
+      "yarn test:staged-files"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "commitlint": "^8.1.0",
+    "husky": "^3.0.5",
+    "lerna": "^2.11.0",
+    "lint-staged": "^7.0.5",
+    "migrate": "^1.6.2"
+  },
+  "scripts": {
+    "test": "lerna exec yarn test",
+    "test:staged-files": "lerna exec yarn test:staged-files",
+    "lint": "eslint .",
+    "ci": "yarn lint && yarn test"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "sarawut-test",
+  "version": "1.0.0",
+  "description": "sarawut-test",
+  "private": true,
+  "main": "index.js",
+  "workspaces": [
+    "app/*"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add",
+      "yarn test:staged-files"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.1.0",
+    "@commitlint/config-conventional": "^8.1.0",
+    "commitlint": "^8.1.0",
+    "husky": "^3.0.5"
+  },
+  "author": "sarawut-test",
+  "license": "UNLICENSED"
+}

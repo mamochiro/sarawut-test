@@ -1,0 +1,19 @@
+type List {
+  id: String!
+  name: String
+  info: String
+}
+
+input createListInput {
+  name: String!
+  info: String!
+}
+
+type Query {
+  list(id: Int): List 
+  lists: [List]
+}
+
+type Mutation {
+  createList(input: createListInput ): List
+}
