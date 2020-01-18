@@ -15,7 +15,7 @@
 
 ## วิธีสร้าง Migration scripts (marai)
 `cd app/api/` และ
-`npx sequelize-cli migration:create --name (ชื่อ db ใน marai) ` สำหรับ mariadb`
+`npx sequelize-cli migration:create --name (ชื่อ db ใน MaraiDB) ` สำหรับ mariadb`
 [ของMongodbไม่ต้องสร้างเพราะใช้Modelเรียกได้เลย]
 
 ## วิธี commit code 
